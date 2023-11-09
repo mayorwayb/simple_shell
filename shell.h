@@ -9,7 +9,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <errno.h>
-#define MAX_C 10
+#include <stdbool.h>
+#define MAX_CMD_ARGS 10
 
 /**
  * struct denum - the structure that contains vars
@@ -24,6 +25,9 @@ char *_strcpy(char *dest, const char *src);
 int intlen(int n);
 char *itoa(int num);
 void gererror(denum *p, char **argv, char *cmd);
-
+void handle_exit(char *user_input);
+void signit_handler(int signal);
+void run_shell(int argc, char **argv, char **envp, bool interactive_mode);
+void runcmd(char **argv2, char **arv1, char **envp);
 
 #endif
