@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * runcmd - function that runs a command
+ * run_command - function that runs a command
  * @argv2: Argument vector for the command
  * @arv1: Argument vector from the main program
  * @envp: Environment variables
  */
-void runcmd(char **argv2, char **arv1, char **envp)
+void run_command(char **argv2, char **arv1, char **envp)
 {
 	pid_t mychild;
 	int stat;

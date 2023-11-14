@@ -16,7 +16,7 @@ void sigint_handler(int signal)
  * @envp: Environment variables
  * @interactive_mode: Flag for interactive mode
  */
-void run_shell(int argc, char **argv, char **envp, bool interactive_mode)
+void run_shell(char **argv, char **envp, bool interactive_mode)
 {
 	size_t buffer_size = 0;
 	ssize_t num_chars = 0;

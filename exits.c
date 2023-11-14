@@ -8,7 +8,7 @@
  */
 void handle_exit(char *user_input)
 {
-	if (my_strcmp("exit", user_input) == 0)
+	if (my_strncmp(user_input, "exit", _strlen("exit")) == 0)
 	{
 		free(user_input);
 		exit(EXIT_SUCCESS);
