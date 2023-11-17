@@ -5,13 +5,23 @@
  *
  * Return: new string with leading spaces removed or NULL on failure
  */
-char *trim(const char *cmd)
+char *trim(char *cmd)
 {
-	if (cmd == NULL)
+	char *cpcmd;
+	int a = 0, len;
+
+	while (cmd[a] == ' ')
+		a++;
+	len = _strlen(cmd) - a + 1;
+	cpcmd = malloc(len + 1);
+	if (!cpcmd)
+	{
+		perror("Allocation Failed\n");
 		return (NULL);
-
-	while (*cmd == ' ')
-		cmd++;
-
-	return (strdup(cmd));
+	}
+	_strncpy(cpcmd, cmd + a, len);
+	cpcmd[len] = '\0';
+	_strcpy(cmd, cpcmd);
+	free(cpcmd);
+	return (cmd);
 }

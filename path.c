@@ -8,12 +8,14 @@
  */
 char *handle_path(char **rgv, const char *cmd)
 {
+	char *path;
+
 	if (cmd == NULL)
 		return (NULL);
 
 	if (cmd[0] != '/' && cmd[0] != '.')
 	{
-		char *path = malloc(_strlen("/bin/") + _strlen(cmd) + 1);
+		path = malloc(_strlen("/bin/") + _strlen(cmd) + 1);
 
 		if (path == NULL)
 		{

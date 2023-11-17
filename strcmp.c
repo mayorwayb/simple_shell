@@ -7,13 +7,17 @@
  * Return: An integer less than, equal to, or greater than zero if s1 is found,
  * respectively, to be less than, to match, or be greater than s2.
  */
-int _strcmp(const char *s1, const char *s2)
+int _strcmp(char *s1, char *s2)
 {
-	while (*s1 && (*s1 == *s2))
+	int cmp = 0;
+
+	while (*s1 == *s2 && *s1 != '\0')
 	{
 		s1++;
 		s2++;
 	}
+	if (s1 != s2)
+		cmp = *s1 - *s2;
 
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (cmp);
 }
