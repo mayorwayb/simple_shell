@@ -20,6 +20,10 @@ typedef struct denum
 {
 	int cnt;
 } denum;
+typedef struct
+{
+        int readfd;
+} info_t;
 int my_strncmp(char *s1, char *s2, int num);
 char *_strcpy(char *dest, const char *src);
 int intlen(int n);
@@ -38,5 +42,10 @@ char *_strncat(char *dest, const char *src, size_t n);
 int _strcmp(const char *s1, const char *s2);
 char *trim(const char *cmd);
 void run_command(char **cmd_args, char **argv, char **envp);
+int interactive(info_t *info);
+int is_delim(char c, char *delim);
+int _isalpha(int c);
+int _atoi(char *s);
+int main();
 
 #endif
